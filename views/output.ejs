@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link href="./stylesheets/style.css" type="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <h3 style="padding: 10px;">Welcome to <%= title %></h3>
+    <hr />
+    <div class="row">
+        <div class="col-md-5"> 
+            
+                    <% records.forEach((row) => { %>
+            <div class="card" style="margin: 10px;">
+                 <div class="card-body" >
+                    <h5>File Original Name: <%=row.filename %></h5>
+                    <h5>File Size: <%=row.fileSize %></h5>
+                    <h5>File Type: <%=row.fileType %></h5>
+                    <h5>File Name: <%= row.file %></h5>
+                    <h5>File: <img src="./uploads/<%= row.file %>" alt="Image File with filename <%=row.filename %>" width="80" /></h5>
+                    <p><b>Note:</b>for direct seeing of file use uploads/File Name</p>
+                </div>
+            </div>    
+                    <% }) %>   
+               
+        </div>
+    </div>
+</body>
+</html>
